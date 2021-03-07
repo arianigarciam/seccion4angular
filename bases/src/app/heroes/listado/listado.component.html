@@ -1,6 +1,6 @@
 <div>
-    <h3>Heroe Borrado</h3>
-    <span>{{heroeBorrado}}</span>
+    <h3 *ngIf="heroeBorrado != ''">Heroe Borrado</h3>
+    <small>{{heroeBorrado}}</small>
 
     <button (click)="BorrarHeroe()">Borrar H</button>
 </div>

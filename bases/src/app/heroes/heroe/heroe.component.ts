@@ -7,5 +7,16 @@ import { Component } from "@angular/core";
 
 
 export class HeroeComponent {
+    nombre: string = 'Ironman';
+    edad: number = 45;
+
+    get nombreCapitalizado () {
+        return this.nombre.toLocaleUpperCase();
+    }
+
+    obtenerNombre() :string {
+        return `${this.nombre } - ${this.edad}
+        `;
+    }
 
 }

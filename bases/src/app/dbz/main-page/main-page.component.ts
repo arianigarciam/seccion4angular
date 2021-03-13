@@ -1,14 +1,47 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+interface Personaje {
+  nombre: string;
+  poder: number;
+}
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html'
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent {
+  
+  personajes: Personaje[] = [
+    {
+      nombre: "Primero",
+      poder: 111
+    },
+    {
+      nombre: "Segunda",
+      poder: 222
+    }
+  ];
 
-  constructor() { }
+  nuevo: Personaje = {
+    nombre : "",
+    poder: 0,
+  }
 
-  ngOnInit(): void {
+  agregar(){
+
+    if(this.nuevo.nombre.trim().length === 0){
+      return;
+    }
+    console.log( this.nuevo );
+    this.personajes.push(this.nuevo);
+    this.nuevo = {
+      nombre: '',
+      poder: 0
+    };
+  }
+  
+  cambiarNombre(event : any){
+    console.log(event.target.value);
   }
 
 }

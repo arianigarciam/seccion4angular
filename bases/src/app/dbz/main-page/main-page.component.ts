@@ -20,22 +20,26 @@ export class MainPageComponent {
   ];
 
   nuevo: Personaje = {
-    nombre : "",
-    poder: 0,
+    nombre : "desde main-component",
+    poder: 555,
+  }
+  agregarNuevoPersonaje( argumento: Personaje){
+  
+    this.personajes.push(argumento)
   }
 
-  agregar(){
+  // agregar(){
 
-    if(this.nuevo.nombre.trim().length === 0){
-      return;
-    }
-    console.log( this.nuevo );
-    this.personajes.push(this.nuevo);
-    this.nuevo = {
-      nombre: '',
-      poder: 0
-    };
-  }
+  //   if(this.nuevo.nombre.trim().length === 0){
+  //     return;
+  //   }
+  //   console.log( this.nuevo );
+  //   this.personajes.push(this.nuevo);
+  //   this.nuevo = {
+  //     nombre: '',
+  //     poder: 0
+  //   };
+  // }
   
   cambiarNombre(event : any){
     console.log(event.target.value);
